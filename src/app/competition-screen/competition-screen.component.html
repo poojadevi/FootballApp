@@ -1,0 +1,96 @@
+<div class="container color-dark">
+<form name="compForm">
+	<select name="complist" [(ngModel)]="idofteam" (ngModelChange)="GetSelectedPointsTable($event)">
++                 
++                        <option *ngFor="let data of CometitionList" [value]="data.id">{{data.caption}}</option>
++   </select>
+<!--	<input type="text" name="txt" class="txt" placeholder="Select Competiton Screen" [(ngModel)]="twoWayBind"/>-->
+<!--	<div><br>{{twoWayBind}}</div>-->
+<!--	<input type="submit" class="btn" [value]="btnName" (click)="AddItem()"/>-->
+<!--	<input type="submit" class="btn" value="Get data" (click)="getData()"/>-->
+	
+
+	 <!--<div class="text-center table-std bottom-gap col-md-6">
+                                            <table class="table table-leave col-md-8" >
+                                                <thead>
+                                                    <tr>
+                                                        <th>Sr. No.</th>
+                                                        <th><span>Caption</span></th>
+                                                        <th><span>league</span></th>
+                                                        <th><span>Year</span></th>
+                                                        <th><span>currentMatchday</span></th>
+                                                        <th><span>To view Points Table</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="text-center">
+                                                    <tr *ngFor="let data of TestHttpData">
+                                                        <td><span>{{data.id}}</span></td>
+                                                     	<td><span>{{data.caption}}</span></td>
+                                                        <td><span>{{data.league}}</span></td>
+                                                        <td><span>{{data.year}}</span></td>
+                                                        <td><span>{{data.currentMatchday}}</span></td>
+                                                        <td><span><input type="submit" class="btn" [value]="btnName" (click)="GetSelectedPointsTable(data.id)"/></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+        </div>test -->
+	<div class="text-center table-std bottom-gap" *ngIf='boolean'>
+                                            <table  >
+                                                <thead>
+													<tr>
+                                                       <th>Sr. No.</th>
+                                                        <th><span>TeamName</span></th>
+                                                        <th><span>Played Games</span></th>
+                                                        <th><span>Points</span></th>
+                                                        <th><span>Goals</span></th>
+                                                        <th><span>Goals Against</span></th>
+                                                        <th><span>GoalDifference</span></th>
+                                                        <th><span>Wins</span></th>
+                                                        <th><span>Draws</span></th>
+                                                        <th><span>Losses</span></th>
+                                                        <th colspan="5">Home</th>
+                                                        <th colspan="5">Away</th>
+													</tr>
+													<tr>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th></th>
+														<th>Goals</th>
+														<th>GoalsAgainst</th>
+														<th>Wins</th>
+														<th>Draws</th>
+														<th>Losses</th>
+														<th>Goals</th>
+														<th>GoalsAgainst</th>
+														<th>Wins</th>
+														<th>Draws</th>
+														<th>Losses</th>
+													</tr>
+                                                </thead>
+                                                <tbody class="text-center">
+                                                    <tr *ngFor='let data of PointsTableData.standing; let i=index'>
+                                                        <td><span>{{i+1}}</span></td>
+                                                     	<td><span>{{data.teamName}}</span></td>
+                                                        <td><span>{{data.playedGames}}</span></td>
+                                                        <td><span>{{data.points}}</span></td>
+                                                        <td><span>{{data.goals}}</span></td>
+                                                        <td><span>{{data.goalsAgainst}}</span></td>
+                                                        <td><span>{{data.goalDifference}}</span></td>
+                                                        <td><span>{{data.wins}}</span></td>
+                                                        <td><span>{{data.draws}}</span></td>
+                                                        <td><span>{{data.losses}}</span></td>
+														<td><span>{{data.home.goals}}</span></td><td><span>{{data.home.goalsAgainst}}</span></td><td><span>{{data.home.wins}}</span></td><td><span>{{data.home.draws}}</span></td><td><span>{{data.home.losses}}</span></td>
+														<td><span>{{data.away.goals}}</span></td><td><span>{{data.away.goalsAgainst}}</span></td><td><span>{{data.away.wins}}</span></td><td><span>{{data.away.draws}}</span></td><td><span>{{data.away.losses}}</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+        </div>
+	</form>
+</div>

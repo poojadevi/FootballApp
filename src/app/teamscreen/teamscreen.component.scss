@@ -1,0 +1,28 @@
+.table-std {
+    width: 100%;
+    border: 1px solid #d4d4d4;
+    thead {
+        background: #f3f3f3;
+        border-bottom: 1px solid #d4d4d4;
+    }
+    thead th,
+    tbody td {
+        padding: 3px 7px;
+        line-height: 2;
+        font-size: 12px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    tbody {
+        tr:nth-child(even) {
+            background: #eeeeee;
+        }
+        tr:nth-child(odd) {
+            background: #fdfdfd;
+        }
+        tr:hover {
+            background: #dddddd;
+        }
+    }
+}

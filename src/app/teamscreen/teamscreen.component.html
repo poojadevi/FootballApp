@@ -1,0 +1,33 @@
+<div *ngIf="showlist">
+ <select name="list" [(ngModel)]="url" (ngModelChange)="GetSelectedPlayers($event)"> 
++                 
++                        <option *ngFor="let data of TeamList.teams" [value]="data._links.players.href">{{data.name}}</option>
++   </select>
+	<div class="text-center table-std bottom-gap" *ngIf='boolean'>
+                                            <table  >
+                                                <thead>
+													<tr>
+                                                       <th>Sr. No.</th>
+                                                        <th><span>Player Name</span></th>
+                                                        <th><span>Player Position</span></th>
+                                                        <th><span>Jersey Number</span></th>
+                                                        <th><span>Date of Birth</span></th>
+                                                        <th><span>Nationality</span></th>
+                                                        <th><span>Contract Period</span></th>
+													</tr>
+                                                </thead>
+                                                <tbody class="text-center">
+                                                    <tr *ngFor='let data of PlayerDetails.players; let i=index'>
+                                                        <td><span>{{i+1}}</span></td>
+                                                     	<td><span>{{data.name}}</span></td>
+                                                        <td><span>{{data.position}}</span></td>
+                                                        <td><span>{{data.jerseyNumber}}</span></td>
+                                                        <td><span>{{data.dateOfBirth}}</span></td>
+                                                        <td><span>{{data.nationality}}</span></td>
+                                                        <td><span>{{data.contractUntil}}</span></td>
+                                                        <td><span>{{data.marketValue}}</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+        </div>
+</div>
